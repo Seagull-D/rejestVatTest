@@ -1,0 +1,205 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xl);
+  padding: var(--gap-lg) var(--gap-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.complete { gap: var(--gap-md); }
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--gap-sm);
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* kroki — desktop */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  margin: var(--gap-md) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  color: var(--muted);
+}
+.step + .step::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--border-strong);
+}
+.step.done + .step::before { background: var(--brand); }
+
+.stepBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  padding: 4px 8px 4px 4px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.stepBtn:hover:not(:disabled) { background: var(--surface-alt); }
+.stepBtn:disabled { cursor: default; }
+
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.done { color: var(--text); }
+.done .num {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.current { color: var(--text); font-weight: 600; }
+.current .num {
+  border: 2px solid var(--status-setup);
+  color: var(--warning);
+}
+
+/* pasek postępu — telefon */
+.progress { display: none; }
+
+.text {
+  margin: 0;
+  max-width: 560px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.note {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+.okIcon { flex: none; color: var(--status-ready); }
+
+.primary,
+.secondary {
+  flex: none;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+}
+.primary { border: 0; background: var(--brand); color: #fff; }
+.primary:hover { background: var(--brand-hover); }
+.secondary { border: 1px solid var(--border-strong); background: var(--surface); }
+.secondary:hover { background: var(--surface-alt); }
+
+.full { width: 100%; margin-top: var(--gap-lg); }
+
+/* діалоги */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  margin-bottom: var(--gap-md);
+  font-size: 12px;
+  color: var(--muted);
+}
+.field select {
+  height: var(--control-h);
+  padding: 0 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.radios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.radios legend {
+  margin-bottom: var(--gap-sm);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.radio input { accent-color: var(--brand); }
+.radioOn { border-color: var(--brand); background: var(--brand-soft); }
+
+@media (max-width: 720px) {
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gap-md);
+    padding: var(--gap-lg);
+  }
+  .complete { flex-direction: row; align-items: center; }
+
+  .head { justify-content: space-between; }
+  .steps { display: none; }
+
+  .progress {
+    display: flex;
+    gap: 4px;
+    margin: var(--gap-sm) 0 var(--gap-md);
+  }
+  .seg {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-strong);
+  }
+  .seg.done { background: var(--brand); }
+  .seg.current { background: var(--status-setup); }
+
+  .note { display: none; }
+  .primary { width: 100%; }
+}

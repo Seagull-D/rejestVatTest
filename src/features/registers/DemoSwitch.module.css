@@ -1,0 +1,49 @@
+/* фіксовані кольори: перемикач однаково темний в обох темах */
+.switch {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #0f172a;
+  box-shadow: var(--shadow-pop);
+}
+
+.label {
+  padding: 0 8px 0 10px;
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn {
+  height: 28px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.on {
+  background: #fff;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+/* телефон: у потоці сторінки внизу, щоб нічого не перекривати */
+@media (max-width: 720px) {
+  .switch {
+    position: static;
+    align-self: center;
+    margin-top: var(--gap-sm);
+    box-shadow: none;
+  }
+}

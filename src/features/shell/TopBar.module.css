@@ -1,0 +1,72 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  max-width: 1120px;
+  height: 56px;
+  margin: 0 auto;
+  padding: 0 var(--gap-lg);
+}
+
+.org {
+  font-weight: 600;
+  color: var(--brand);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileTitle { display: none; }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs);
+  margin-left: auto;
+}
+
+.iconBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.iconBtn:hover { background: var(--surface-alt); color: var(--text); }
+
+.divider {
+  width: 1px;
+  height: 24px;
+  margin: 0 var(--gap-sm);
+  background: var(--border);
+}
+
+@media (max-width: 720px) {
+  .inner { height: 52px; }
+  .org,
+  .desktopOnly,
+  .divider { display: none; }
+
+  .mobileTitle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 0;
+  }
+}

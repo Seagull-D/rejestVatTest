@@ -1,0 +1,10 @@
+.dot {
+  display: inline-block;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.ready { background: var(--status-ready); }
+.setup { background: var(--status-setup); }
+.off { background: var(--status-off); }

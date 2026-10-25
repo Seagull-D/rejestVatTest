@@ -1,0 +1,114 @@
+:root {
+  /* бренд */
+  --brand: #0f6e56;
+  --brand-hover: #0b5a46;
+  --brand-soft: #e1f5ee; /* фон активної вкладки / чипа */
+  --brand-text: #085041; /* текст на brand-soft */
+
+  /* текст */
+  --text: #0f172a; /* основний */
+  --muted: #64748b; /* другорядний: підписи, дати */
+  --subtle: #94a3b8; /* плейсхолдери, іконки */
+
+  /* поверхні */
+  --bg: #f6f8fa; /* фон сторінки */
+  --surface: #ffffff; /* картки, таблиця */
+  --surface-alt: #f1f5f9; /* hover рядка, розгорнутий рядок */
+
+  /* межі */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* статуси */
+  --warning: #92400e;
+  --warning-bg: #fef3c7;
+  --warning-dot: #d97706;
+  --danger: #b91c1c;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+
+  /* форма */
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-pop: 0 8px 24px rgb(15 23 42 / 0.12), 0 2px 6px rgb(15 23 42 / 0.08);
+
+  /* відступи */
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap-md: 12px;
+  --gap-lg: 16px;
+  --gap-xl: 24px;
+
+  /* шрифт */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Consolas, monospace;
+
+  /* розміри */
+  --control-h: 36px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* фокус лише з клавіатури і в кольорі бренду */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+:root {
+  --status-ready: #1d9e75;
+  --status-setup: #d97706;
+  --status-off: #cbd5e1;
+  --nav-h: 64px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --brand: #2bb38a;
+  --brand-hover: #5dcaa5;
+  --brand-soft: #0f3a30;
+  --brand-text: #9fe1cb;
+
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --subtle: #6b7280;
+
+  --bg: #0b1120;
+  --surface: #111827;
+  --surface-alt: #1a2332;
+
+  --border: #263041;
+  --border-strong: #374151;
+
+  --warning: #fcd34d;
+  --warning-bg: #3a2a0a;
+  --warning-dot: #f59e0b;
+  --danger: #fca5a5;
+  --danger-bg: #3b1212;
+  --danger-border: #7f1d1d;
+
+  --status-off: #4b5563;
+  --shadow-pop: 0 8px 24px rgb(0 0 0 / 0.5);
+}

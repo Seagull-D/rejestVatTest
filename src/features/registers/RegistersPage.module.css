@@ -1,0 +1,17 @@
+.page {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--gap-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: var(--gap-lg);
+    border-radius: 0;
+    border-inline: 0;
+  }
+}

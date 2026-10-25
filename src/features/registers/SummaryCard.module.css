@@ -1,0 +1,93 @@
+.card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.8fr;
+  gap: var(--gap-lg) var(--gap-xl);
+  align-items: end;
+  padding: var(--gap-lg) var(--gap-xl);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.loading { opacity: 0.55; }
+
+.gross,
+.metric,
+.rates {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.big {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.rateList {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rate {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: var(--gap-sm);
+  font-size: 12px;
+}
+
+.rateName { color: var(--muted); }
+
+.track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-alt);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: var(--brand);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.rateValue {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* планшет: суми в ряд, ставки під ними */
+@media (max-width: 960px) {
+  .card { grid-template-columns: repeat(3, 1fr); }
+  .rates { grid-column: 1 / -1; }
+}
+
+/* телефон: brutto на всю ширину, netto + vat поруч */
+@media (max-width: 520px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--gap-lg);
+  }
+  .gross { grid-column: 1 / -1; }
+  .big { font-size: 24px; }
+}
